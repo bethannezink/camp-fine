@@ -36,6 +36,7 @@ class OpenSecret
       candidate.debt = candidate["debt"]
       candidate.save
     end
+  end
 
   def build_contributions
 
