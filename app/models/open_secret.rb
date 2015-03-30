@@ -27,7 +27,7 @@ class OpenSecret
 
   def update_candidates
     Candidate.all.each do |candidate|
-      data = JSON.parse(open("http://www.opensecrets.org/api/?method=candSummary&cid=#{candidate.cid}&cycle=2012&apikey=#{dev_key}&output=json").read)
+      data = JSON.parse(open("http://www.opensecrets.org/api/?method=candSummary&cid=#{candidate.cid}&cycle=2014&apikey=#{dev_key}&output=json").read)
       info = data["response"]["summary"]["@attributes"]
       candidate.chamber = info["chamber"]
       candidate.total = info["total"]
@@ -39,7 +39,20 @@ class OpenSecret
   end
 
   def build_contributions
-
+    Candidate.all.each do |candidate|
+      data = fetch_contributions(candidate.cid)
+      info = data["response"]["contributors"]["contributor"]
+      info.each do |contribution|
+        c = Contribution.new
+        c.candidate = candidate
+        c.donor = Donor.find_or_create_by(name: contribution["@attributes"]["org_name"])
+        c.total = contribution["@attributes"]["total"]
+        c.individual_amount = contribution["@attributes"]["indivs"]
+        c.pac_amount = contribution["@attributes"]["pacs"]
+        c.cycle = 2014
+        c.save
+      end
+    end
   end
 
 end
