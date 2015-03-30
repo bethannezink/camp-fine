@@ -1,5 +1,5 @@
-class OpenSecret < ActiveRecord::Base
+class OpenSecret
 
-  dev_key = ENV["open_secret_key"]
-  binding.pry
+  DEV_KEY = ENV["open_secret_key"]
+  
 end
