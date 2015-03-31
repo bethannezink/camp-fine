@@ -95,6 +95,7 @@ GEM
     figaro (1.1.0)
       thor (~> 0.14)
     formatador (0.2.5)
+    geocoder (1.2.8)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     google-analytics-rails (0.0.6)
@@ -284,6 +285,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   figaro
+  geocoder
   google-analytics-rails
   guard-rspec
   jbuilder (~> 2.0)
