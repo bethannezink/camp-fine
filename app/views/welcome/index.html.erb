@@ -1,0 +1,13 @@
+<!-- 1. We need to build a form.
+
+On form submission, search the database by zip code. 
+
+Return any Congress persons matching that Zip Code.
+
+-->
+<br>
+<%=form_tag("/search", method: "GET") do %>
+<%= label_tag(:q, "Search for Members of Congress by Zip Code") %>
+<%= text_field_tag(:q) %>
+<%= submit_tag("Submit") %>
+<% end %>
