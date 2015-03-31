@@ -1,0 +1,18 @@
+<h1><%= @candidate.name %></h1>
+
+<ul>
+<li><%= "State : #{@candidate.state}" %> </li>
+<li><%= "Chamber: #{@candidate.chamber}" %> </li>
+<li><%= "Party: #{@candidate.party_name}" %> </li>
+<li><%= "First Elected: #{@candidate.first_elected}" %> </li>
+<li><%= "Total Raised: #{@candidate.total}" %> </li>
+<li><%= "Total Spent: #{@candidate.spent}" %> </li>
+<li><%= "Cash on Hand: #{@candidate.cash_on_hand}" %> </li>
+</ul>
+
+<h2>Contributions</h2>
+<ul>
+<% @contributions.each do |contribution| %>
+<li><%= "Contributor:  #{contribution.donor.name}" %></li>
+<li><%= "Total Amount: #{contribution.total}" %></li>
+<%end%>
