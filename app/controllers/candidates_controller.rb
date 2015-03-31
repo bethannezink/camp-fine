@@ -7,5 +7,6 @@ class CandidatesController < ApplicationController
   def show
     @candidate = Candidate.find(params[:id])
     @contributions = @candidate.contributions
+    @industry_contributions = @candidate.industry_contributions
   end
 end
