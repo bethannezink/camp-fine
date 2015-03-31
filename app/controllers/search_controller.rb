@@ -1,13 +1,11 @@
 class SearchController < ApplicationController
 
   def index
-    @candidates = Candidate.find_by(zip_code: params[:q])
+    @candidates = Sunlight.new.return_candidate_objects(params[:q])
     if @candidates.empty?
-      #hit the api
-      # for each result, update the zip code property of the candidates
-      #return the results of the updated objects
+      
     else
-      @candidates
+      render "candidates/index"
     end
   end
 
