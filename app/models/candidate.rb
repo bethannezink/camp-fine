@@ -1,6 +1,8 @@
 class Candidate < ActiveRecord::Base
   has_many :contributions
   has_many :donors, through: :contributions
+  has_many :industry_contributions
+  has_many :industries, through: :industry_contributions
 
 
   def party_name
