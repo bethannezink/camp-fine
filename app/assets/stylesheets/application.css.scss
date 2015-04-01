@@ -21,10 +21,11 @@
  
 @import "bootstrap";
 
+
+
 /* Some Style from the Bootstrap Default Theme */
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+  background-color: #337AB7;
 }
 
 .theme-dropdown .dropdown-menu {
@@ -35,4 +36,53 @@ body {
 
 .theme-showcase > p > .btn {
   margin: 5px 0;
+}
+
+.foot {
+  font-size: 12px;
+  font-family: Raleway;
+  text-align: center;
+}
+
+.subby {
+  font-family: Raleway;
+  font-color: white;
+  background-color: navy;
+  border: navy;
+  width: 70px;
+  text-align: center;
+}
+
+.big-font {
+  font_family: Raleway;
+  align: center;
+}
+
+.wrapper {
+  width: 100%;  
+}
+
+.column-1 {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.texty {
+  text-align: center;
+  width: 90px;
+  padding: 3px;
+}
+
+.formy {
+  font-color: black;
+}
+
+.basic-bg {
+  background-color: #fff;
+  width: 60%;
+  font-size: 16px;
+  font-family: Raleway;
+
 }

@@ -1,15 +1,14 @@
-<!-- 1. We need to build a form.
 
-On form submission, search the database by zip code. 
+<br><br><br><br><br>
+<h1 class="big-font"></h1></br></br></br>
+  <section class="column-1">
+    <%=form_tag("/search", method: "GET") do %>
+    <%= text_field_tag(:q, nil, :class => "form-control", :placeholder => "Enter Your Address or a Candidate's Name") %><br>  
+    <%= submit_tag "Find my candidate", :class => "btn btn-primary btn" %>
+    <% end %>
+  </section>
 
-Return any Congress persons matching that Zip Code.
+</div>
 
-Add flash notice!
 
--->
-<br>
-<%=form_tag("/search", method: "GET") do %>
-<%= label_tag(:q, "Search for Members of Congress by Zip Code") %>
-<%= text_field_tag(:q) %>
-<%= submit_tag("Submit") %>
-<% end %>
+     
