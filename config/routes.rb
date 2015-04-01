@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  
   root "welcome#index"
   resources :search, only: [:index]
   resources :candidates
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
 
   get "searchbyname" => "welcome#searchbyname"
   get "search/name" => "search#name"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
