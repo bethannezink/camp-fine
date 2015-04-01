@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   root "welcome#index"
   resources :search, only: [:index]
   resources :candidates
+
+
+  get "searchbyname" => "welcome#searchbyname"
+  get "search/name" => "search#name"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

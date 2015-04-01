@@ -27,9 +27,12 @@
 body {
   background-color: #337AB7;
 }
+.footer-fix {
+  height: 330px;
+  clear: both;
+}
 
 .theme-dropdown .dropdown-menu {
-  position: static;
   display: block;
   margin-bottom: 20px;
 }
