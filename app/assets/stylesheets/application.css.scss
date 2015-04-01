@@ -25,10 +25,12 @@
 
 /* Some Style from the Bootstrap Default Theme */
 body {
+  background-image: url("capitol.jpg");
   background-color: #337AB7;
+
 }
 .footer-fix {
-  height: 300px;
+  height: 260px;
   clear: both;
 }
 
@@ -88,4 +90,8 @@ body {
   font-size: 16px;
   font-family: Raleway, Montserrat;
 
+}
+
+.fonty {
+  font-size: 14px;
 }

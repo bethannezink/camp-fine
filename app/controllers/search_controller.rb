@@ -6,7 +6,6 @@ class SearchController < ApplicationController
 
     else
       @result = Geocoder.address(params[:q])
-
       render "candidates/index"
     end
   end
