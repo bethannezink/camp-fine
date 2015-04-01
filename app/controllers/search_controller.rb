@@ -4,12 +4,11 @@ class SearchController < ApplicationController
 
     @candidates = Sunlight.new.return_candidate_objects(params[:q])
     if @candidates.empty?
-
+      @result = "No results found. Please try a different search."
     else
       @result = Geocoder.address(params[:q])
-
-      render "candidates/index"
     end
+    render "candidates/index"
 
   end
 
