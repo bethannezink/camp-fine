@@ -6,8 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 api = OpenSecret.new
-api.state_array.each do |state|
-  api.build_candidates(state)
-end
-api.update_candidates
-api.build_industries
+# api.state_array.each do |state|
+#   api.build_candidates(state)
+# end
+# api.update_candidates
+# api.build_industries
+api.build_contributions
