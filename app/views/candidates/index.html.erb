@@ -1,8 +1,11 @@
-<ul>
-</br>
-<% @candidates.each do |candidate|%>
-<li><%= link_to candidate.name, candidate %></li>
-
-<% end %>
-
-</ul>
+<div class="container-fluid">
+<div class="jumbotron" >
+<h2> Your Candidates:  </h2>
+  <ul>
+    </br>
+    <% @candidates.each do |candidate|%>
+      <li><%= link_to candidate.name, candidate %></li>
+    <% end %>
+  </ul>
+</div>
+</div>
