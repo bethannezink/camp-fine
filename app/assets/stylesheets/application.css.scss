@@ -89,9 +89,22 @@ body {
   width: 60%;
   font-size: 16px;
   font-family: Raleway, Montserrat;
-
 }
 
 .fonty {
   font-size: 14px;
+}
+
+p.name {
+  font-size: 18px;
+  font-family: Raleway, Montserrat;
+  font-weight: bold;
+  text-align: left;
+}
+
+p.amount {
+  font-size: 16px;
+  font-family: Raleway, Montserrat;
+  font-weight: bold;
+  text-align: left;
 }
