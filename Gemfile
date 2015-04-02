@@ -64,6 +64,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass'
 gem 'devise'
 gem 'airbrake'

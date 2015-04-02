@@ -14,7 +14,6 @@ class SearchController < ApplicationController
 
   def name
     @candidates = Candidate.where("name LIKE ?", "%#{params[:q]}%")
-
     @result = params[:q]
     render "candidates/index"
   end

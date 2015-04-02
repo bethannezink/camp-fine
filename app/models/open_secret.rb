@@ -34,8 +34,8 @@ class OpenSecret
     end
   end
 
-  def update_candidates
-    Candidate.all.each do |candidate|
+  def update_candidates(candidates_array) #updates candidate information for array of Candidates
+    candidates_array.each do |candidate|
       data = JSON.parse(open("http://www.opensecrets.org/api/?method=candSummary&cid=#{candidate.cid}&cycle=2014&apikey=#{dev_key}&output=json").read)
       info = data["response"]["summary"]["@attributes"]
       candidate.chamber = info["chamber"]
@@ -47,8 +47,8 @@ class OpenSecret
     end
   end
 
-  def build_contributions
-    Candidate.all.each do |candidate|
+  def build_contributions(candidates_array)
+    candidates_array.each do |candidate|
       data = fetch_contributions(candidate.cid)
       info = data["response"]["contributors"]["contributor"]
       info.each do |contribution|
@@ -64,8 +64,8 @@ class OpenSecret
     end
   end
 
-  def build_industries
-    Candidate.all.each do |candidate|
+  def build_industries(candidates_array)
+    candidates_array.each do |candidate|
       data = fetch_industry_contributions(candidate.cid)
       info = data["response"]["industries"]["industry"]
       info.each do |contribution|
