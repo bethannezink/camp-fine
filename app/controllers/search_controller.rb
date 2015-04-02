@@ -12,9 +12,11 @@ class SearchController < ApplicationController
   end
 
   def name
-    @candidates = Candidate.search(:include => [:name]) do
+    @search = Candidate.search(:include => [:name]) do
       keywords(params[:q])
     end
+    @candidates = @search.results
+    binding.pry
     render "candidates/index"
   end
 
