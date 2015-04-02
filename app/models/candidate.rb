@@ -4,6 +4,10 @@ class Candidate < ActiveRecord::Base
   has_many :industry_contributions
   has_many :industries, through: :industry_contributions
 
+  searchable do 
+    string :name, :state, :party_name, :chamber
+  end
+
 
   def party_name
     case self.party

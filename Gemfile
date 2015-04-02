@@ -19,9 +19,12 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'figaro'
+gem 'figaro' #Manage API keys
 
-gem 'geocoder'
+gem 'geocoder' #translates address to lat/long cooridnates for candidate searching
+
+gem 'sunspot_rails' #allows fuzzy searching by name
+gem 'sunspot_solr'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
