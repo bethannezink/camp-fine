@@ -10,7 +10,7 @@ api = OpenSecret.new
 api.state_array.each do |state|
   api.build_candidates(state)
 end
-api.update_candidates
-api.build_industries
-api.build_contributions
+api.update_candidates(Candidate.all)
+api.build_industries(Candidate.all)
+api.build_contributions(Candidate.all)
 
