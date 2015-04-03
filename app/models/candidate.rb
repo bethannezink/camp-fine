@@ -8,11 +8,22 @@ class Candidate < ActiveRecord::Base
   def party_name
     case self.party
     when "D"
-      "Democratic Party"
+      "Democratic"
     when "R"
-      "Republican Party"
+      "Republican"
     else
       self.party
+    end
+  end
+
+  def position
+    case self.chamber
+    when "H"
+      "Representative"
+    when "S"
+      "Senator"
+    else
+      self.chamber
     end
   end
 

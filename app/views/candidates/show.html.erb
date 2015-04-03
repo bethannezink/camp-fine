@@ -1,10 +1,9 @@
 <div class="container-fluid">
   <div class="jumbotron" >
     <h1><%= @candidate.name %></h1>
+    <h3><%= "#{@candidate.chamber} from #{@candidate.state}" %></h3>
+    <h3><%= "#{@candidate.party_name}" %> </h3>
     <ul>
-      <li><%= "State : #{@candidate.state}" %> </li>
-      <li><%= "Chamber: #{@candidate.chamber}" %> </li>
-      <li><%= "Party: #{@candidate.party_name}" %> </li>
       <li><%= "First Elected: #{@candidate.first_elected}" %> </li>
       <li><%= "Total Raised: #{number_to_currency(@candidate.total)}" %> </li>
       <li><%= "Total Spent: #{number_to_currency(@candidate.spent)}" %> </li>
