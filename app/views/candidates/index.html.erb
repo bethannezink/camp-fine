@@ -4,7 +4,7 @@
   <ul>
     </br>
     <% @candidates.each do |candidate|%>
-      <li><%= link_to candidate.name, candidate %></li>
+      <li><%= link_to "#{candidate.name} - #{candidate.party_name} - #{candidate.state}", candidate %></li>
     <% end %>
   </ul>
 </div>

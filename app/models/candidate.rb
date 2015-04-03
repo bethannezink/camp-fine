@@ -16,6 +16,15 @@ class Candidate < ActiveRecord::Base
     end
   end
 
+  def position
+    case self.chamber
+    when "H"
+      "Representative"
+    when "S"
+      "Senator"
+    end
+  end
+
   def self.independents
     self.all.collect do |can|
       can if can.party!= "D" && can.party != "R"

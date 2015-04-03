@@ -2,8 +2,7 @@
   <div class="jumbotron" >
     <h1><%= @candidate.name %></h1>
     <ul>
-      <li><%= "State : #{@candidate.state}" %> </li>
-      <li><%= "Chamber: #{@candidate.chamber}" %> </li>
+      <li><%= "#{@candidate.position} representing #{@candidate.state}" %> </li>
       <li><%= "Party: #{@candidate.party_name}" %> </li>
       <li><%= "First Elected: #{@candidate.first_elected}" %> </li>
       <li><%= "Total Raised: #{number_to_currency(@candidate.total)}" %> </li>
