@@ -8,7 +8,6 @@ class SearchController < ApplicationController
       @result = Geocoder.address(params[:q])
     end
     render "candidates/index"
-
   end
 
   def name
@@ -23,15 +22,6 @@ class SearchController < ApplicationController
 end
 
 
-
-# Example:
-# class PostsController < ApplicationController
-#   def search
-#     @search = Post.search(:include => [:comments]) do
-#       keywords(params[:q])
-#     end
-#   end
-# end
 
 # @candidates = Candidate.where("name LIKE ?", "%#{params[:q]}%")
 # @result = params[:q]

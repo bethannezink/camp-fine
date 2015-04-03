@@ -3,7 +3,7 @@
 <h2> Results: <%= @result %></h2>
   <ul>
     </br>
-    <% @candidates.each_hit_with_result do |hit, candidate|%>
+    <% @search.each_hit_with_result do |hit, candidate|%>
       <li><%= link_to candidate.name, candidate %></li>
     <% end %>
   </ul>
