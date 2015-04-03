@@ -13,7 +13,7 @@ class SearchController < ApplicationController
   end
 
   def name
-    @candidates = Candidate.where("name LIKE ?", "%#{params[:q]}%")
+    @candidates = Candidate.find_by_fuzzy_name(params[:q], limit: 1)
     @result = params[:q]
     render "candidates/index"
   end

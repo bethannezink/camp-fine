@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1><%= @donor.name %></h1>
+    <ul>
+    <% @contributions.each do |contribution| %>
+      <li class="font-fix"><%= "#{number_to_currency(contribution.total)} -" %> <%= link_to contribution.candidate.name, contribution.candidate %>, <%="#{contribution.candidate.state}, #{contribution.candidate.party_name}" %> </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
