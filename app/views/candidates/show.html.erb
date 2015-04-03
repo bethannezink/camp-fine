@@ -17,8 +17,8 @@
     <h3>Contributions</h3>
     <ul>
       <% @contributions.each do |contribution| %>
-      <li><%= "Contributor:  #{contribution.donor.name}" %></li>
-      <li><%= "Total Amount: #{number_to_currency(contribution.total)}" %></li>
+      <li><%= link_to contribution.donor.name, contribution.donor %></li>
+      <li><%= "Total: #{number_to_currency(contribution.total)}" %></li>
       <%end%>
     </ul>
     </div>
@@ -29,8 +29,8 @@
     <h3>Top Industries</h3>
       <ul>
         <% @industry_contributions.each do |ic| %>
-        <li><%= "Industry:  #{ic.industry.name}" %></li>
-        <li><%= "Total Amount: #{number_to_currency(ic.total)}" %></li>
+        <li><%= link_to ic.industry.name, ic.industry %></li>
+        <li><%= "Total: #{number_to_currency(ic.total)}" %></li>
         <% end %>
       </ul>
   </div>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :search, only: [:index]
   resources :candidates
   resources :donors, only: [:show]
+  resources :industries, only: [:show]
 
 
   get "searchbyname" => "welcome#searchbyname"
