@@ -1,0 +1,20 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
+<!-- industries with most candidates -->
+<%= pie_chart Industry.joins(:candidates).group("industries.name").sum('candidates.id')%>
+
+<!-- candidates with most cash -->
+<%= bar_chart @candidates.group(:name).sum(:cash_on_hand), library: {legend: {
+        position: "top",
+
+      }
+  } %>
+
+<!-- donors with most contributions -->
+
+
+<!-- donors with most candidates -->
+
+<!-- {'title':'How Much Pizza I Ate Last Night',
+                     'width':400,
+                     'height':300} -->

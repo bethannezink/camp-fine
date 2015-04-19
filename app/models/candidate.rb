@@ -33,5 +33,9 @@ class Candidate < ActiveRecord::Base
     end.flatten
   end
 
+  def self.most_cash
+    self.group(:id).order("cash_on_hand DESC").limit(10)
+  end
+
 
 end

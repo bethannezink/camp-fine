@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get "searchbyname" => "welcome#searchbyname"
   get "search/name" => "search#name"
+  get "/stats" => "stats#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
