@@ -4,7 +4,7 @@
 <%= pie_chart Industry.joins(:candidates).group("industries.name").sum('candidates.id')%>
 
 <!-- candidates with most cash -->
-<%= bar_chart @candidates.group(:name).sum(:cash_on_hand), library: {legend: {
+<%= bar_chart @candidates.group(:name).sum(:cash_on_hand), discrete: true, library: {legend: {
         position: "top",
 
       }
