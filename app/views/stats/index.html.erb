@@ -1,7 +1,7 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
 <!-- industries with most candidates -->
-<%= pie_chart Industry.joins(:candidates).group("industries.name").sum('candidates.id')%>
+<%= pie_chart Industry.joins(:candidates).group("industries.name").sum('candidates.id'), :title => "Title" %>
 
 <!-- candidates with most cash -->
 <%= bar_chart @candidates.group(:name).sum(:cash_on_hand), discrete: true, library: {legend: {
@@ -10,8 +10,21 @@
       }
   } %>
 
-<!-- donors with most contributions -->
+<!-- candidate with the most donors -->
 
+<%= bar_chart @most_donors.joins(:donors).group('candidates.name').sum('donors.id'), discrete: true, library: {legend: {
+        position: "top",
+
+      }
+  } %>
+
+
+<!-- donors with most contributions -->
+<%= bar_chart @donors.joins(:contributions).group(:name).sum("contributions.total"), discrete: true, library: {legend: {
+        position: "top",
+
+      }
+  } %>
 
 <!-- donors with most candidates -->
 

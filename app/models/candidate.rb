@@ -37,5 +37,9 @@ class Candidate < ActiveRecord::Base
     self.group(:id).order("cash_on_hand DESC").limit(10)
   end
 
+  def self.most_donors
+    self.group('candidates.name').order("count('donors.id') DESC").limit(10)
+  end
+
 
 end
