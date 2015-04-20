@@ -34,7 +34,7 @@ class Candidate < ActiveRecord::Base
   end
 
   def self.most_cash
-    self.group(:id).order("cash_on_hand DESC").limit(10)
+    self.group(:id).order("cash_on_hand DESC").where("cash_on_hand IS NOT NULL").limit(10)
   end
 
   def self.most_donors
