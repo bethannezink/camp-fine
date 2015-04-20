@@ -1,7 +1,7 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
 <!-- industries with most candidates -->
-<%= pie_chart Industry.joins(:candidates).group("industries.name").sum('candidates.id'),  :library => {:title => "Industries With Most Candidates"} %>
+<%= column_chart Industry.joins(:candidates).group("industries.name").count('candidates.id'),  :library => {:title => "Industries With Most Candidates"} %>
 
 <!-- candidates with most cash -->
 <%= bar_chart @candidates.group(:name).sum(:cash_on_hand), discrete: true, library: {
