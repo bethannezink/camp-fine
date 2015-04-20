@@ -41,5 +41,8 @@ class Candidate < ActiveRecord::Base
     self.group('candidates.name').order("count('donors.id') DESC").limit(10)
   end
 
+  def self.highest_contributed
+    self.joins(:contributions).group("candidates.name").sum("contributions.total")
+  end
 
 end

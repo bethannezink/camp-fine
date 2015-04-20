@@ -1,11 +1,11 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
 <!-- industries with most candidates -->
-<%= column_chart Industry.joins(:candidates).group("industries.name").count('candidates.id'),  :library => {:title => "Industries With Most Candidates"} %>
+<%= column_chart Industry.joins(:candidates).group("industries.name").count('candidates.id'),  :library => {:title => "Industries With Most Congresspersons"} %>
 
 <!-- candidates with most cash -->
 <%= bar_chart @candidates.group(:name).sum(:cash_on_hand), discrete: true, library: {
-          :title =>"Candidates With Most Cash on Hand",
+          :title =>"Congresspersons With Most Cash on Hand",
           :legend => {
           :position => "none",
       }
@@ -14,7 +14,17 @@
 <!-- candidate with the most donors -->
 
 <%= bar_chart @most_donors.joins(:donors).group('candidates.name').sum('donors.id'), discrete: true, library: {
-        title: "Candidates With Most Donors",
+        title: "Congresspersons With Most Donors",
+        legend: {
+        position: "none",
+
+      }
+  } %>
+
+  <!-- candidate with the most donors -->
+
+<%= bar_chart Candidate.highest_contributed, discrete: true, library: {
+        title: "Congresspersons With Most Contributions by Value",
         legend: {
         position: "none",
 
