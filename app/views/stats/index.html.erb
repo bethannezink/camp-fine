@@ -21,9 +21,9 @@
       }
   } %>
 
-  <!-- candidate with the most donors -->
+  <!-- candidate with the most money contributed -->
 
-<%= bar_chart Candidate.highest_contributed, discrete: true, library: {
+<%= bar_chart Candidate.highest_contributed.group('candidates.name').sum('contributions.total'), discrete: true, library: {
         title: "Congresspersons With Most Contributions by Value",
         legend: {
         position: "none",
